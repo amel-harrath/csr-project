@@ -1,0 +1,39 @@
+{
+  "name": "csr-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "CSR prototype project",
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "nodemon --inspect --trace-warnings --use_strict",
+    "build": "babel src -d build",
+    "migration:create": "npx sequelize-cli migration:generate --name",
+    "migration:up": "npx sequelize-cli db:migrate",
+    "migration:down": "npx sequelize-cli db:migrate:undo",
+    "seed:create": "npx sequelize-cli seed:generate --name",
+    "seed:all": "npx sequelize-cli db:seed:all",
+    "db-init": "babel-node src/utils/scripts/db-create.js && npm run migration:up && npm run seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/node": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "nodemon": "^3.1.9",
+    "pgtools": "^1.0.1",
+    "sequelize-cli": "^6.6.2"
+  }
+}
