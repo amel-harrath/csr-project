@@ -18,8 +18,10 @@ export default class Requirement extends Model {
     );
   }
   static associate(models) {
-    Requirement.belongsTo(models.DocumentType, {
-      foreignKey: 'documentTypeId',
+    Requirement.belongsToMany(models.DocumentType, {
+      through: 'requirement_document_type',
+      foreignKey: 'requirement_id',
+      as: 'documentTypes',
     });
   }
 }

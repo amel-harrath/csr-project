@@ -18,8 +18,10 @@ export default class DocumentType extends Model {
     );
   }
   static associate(models) {
-    DocumentType.hasMany(models.Requirement, {
-      foreignKey: 'documentTypeId',
+    DocumentType.belongsToMany(models.Requirement, {
+      through: 'requirement_document_type',
+      foreignKey: 'document_type_id',
+      as: 'requirements',
     });
     DocumentType.hasMany(models.Document, {
       foreignKey: 'documentTypeId',
