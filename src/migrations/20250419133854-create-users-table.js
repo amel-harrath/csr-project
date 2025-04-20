@@ -25,7 +25,7 @@ module.exports = {
         allowNull: false,
       },
       role: {
-        type: Sequelize.ENUM('admin', 'csr_manager'),
+        type: Sequelize.STRING,
         allowNull: false,
       },
       created_at: {

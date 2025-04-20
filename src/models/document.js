@@ -4,9 +4,12 @@ export default class Document extends Model {
   static init(sequelize, DataTypes) {
     return super.init(
       {
-        file_link: DataTypes.STRING,
-        status: DataTypes.ENUM('draft', 'submitted', 'validated', 'expired'),
-        expires_at: DataTypes.DATE,
+        fileLink: DataTypes.STRING,
+        status: {
+          type: DataTypes.STRING,
+          defaultValue: 'submitted',
+        },
+        expiresAt: DataTypes.DATE,
         companyId: DataTypes.INTEGER,
         documentTypeId: DataTypes.INTEGER,
       },
