@@ -21,7 +21,7 @@ export const addDocumentSchema = Joi.object({
 // UPDATE DOCUMENT STATUS
 export const updateStatusSchema = Joi.object({
   status: Joi.string()
-    .valid('submitted', 'validated', 'expired', 'refused')
+    .valid('submitted', 'validated', 'expired', 'rejected')
     .required()
     .messages({
       'any.required': 'STATUS_REQUIRED',
