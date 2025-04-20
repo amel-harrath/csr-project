@@ -7,7 +7,7 @@
   "license": "ISC",
   "description": "CSR prototype project",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "npm run db-init && node build/index.js",
     "dev": "nodemon --inspect --trace-warnings --use_strict",
     "build": "babel src -d build",
     "migration:create": "npx sequelize-cli migration:generate --name",
