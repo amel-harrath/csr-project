@@ -51,9 +51,7 @@ export default class DocumentController {
       return res.status(200).json(documents);
     } catch (error) {
       console.error('Error fetching documents:', error);
-      return res
-        .status(500)
-        .json({ message: 'Error fetching documents', error });
+      next(error);
     }
   }
 }
