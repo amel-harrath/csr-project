@@ -5,10 +5,16 @@ const environment = process.env.NODE_ENV || 'development';
 
 const dbConfig = config[environment];
 const DBNAME = dbConfig.database;
+const pgtoolsConfig = {
+  user: dbConfig.username,
+  password: dbConfig.password,
+  host: dbConfig.host,
+  port: dbConfig.port,
+};
 async function createDatabaseIfNotExists() {
   try {
     await pgtools
-      .createdb(dbConfig, DBNAME)
+      .createdb(pgtoolsConfig, DBNAME)
       .then(() => {
         console.log(`Database "${DBNAME}" successfully created.`);
         process.exit(0);

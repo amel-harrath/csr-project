@@ -173,7 +173,7 @@ This table stores information about the companies that are managing their CSR co
    NODE_ENV= development
    DB_USERNAME= myDBUsername
    DB_PASSWORD= myDBPassword
-   DB_NAME= myDBName
+   DB_DATABASE= myDBName
    DB_HOST= myDBHost
    DB_PORT= myDBPort
    PORT= myAppPort
