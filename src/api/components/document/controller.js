@@ -54,4 +54,13 @@ export default class DocumentController {
       next(error);
     }
   }
+  async getAllDocumentTypes(req, res) {
+    try {
+      const documentTypes = await DocumentService.getAllDocumentTypes();
+      return res.status(200).json(documentTypes);
+    } catch (error) {
+      console.error('Error fetching documents:', error);
+      next(error);
+    }
+  }
 }

@@ -24,4 +24,6 @@ router.delete(
 
 router.get('/', documentController.getAllDocuments);
 
+router.get('/types', documentController.getAllDocumentTypes);
+
 export default router;

@@ -67,4 +67,8 @@ export default class DocumentService {
     );
     return documentTypes;
   }
+  static async getAllDocumentTypes(companyId) {
+    const documentTypes = await DocumentType.unscoped().findAll();
+    return documentTypes;
+  }
 }
