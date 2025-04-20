@@ -15,7 +15,7 @@ module.exports = {
         `SELECT id FROM "companies" WHERE name = 'GreenTech corp'`
       );
 
-      const companyId = companies[0]?.id;
+      const companyId = companies[0] ? companies[0].id : null;
 
       if (companyId) {
         await queryInterface.bulkInsert('users', [
