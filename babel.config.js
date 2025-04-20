@@ -8,10 +8,6 @@ module.exports = {
         root: ['./src'],
         alias: {
           src: './src',
-          controllers: './src/controllers',
-          services: './src/services',
-          models: './src/models',
-          utils: './src/utils',
         },
       },
     ],

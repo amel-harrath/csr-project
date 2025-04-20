@@ -28,8 +28,9 @@ module.exports = {
         allowNull: false,
       },
       status: {
-        type: Sequelize.ENUM('draft', 'validated', 'submitted', 'expired'),
+        type: Sequelize.STRING,
         allowNull: false,
+        defaultValue: 'submitted',
       },
       expires_at: {
         type: Sequelize.DATE,

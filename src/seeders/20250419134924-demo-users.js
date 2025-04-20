@@ -12,7 +12,7 @@ module.exports = {
       const passwordHash = await bcrypt.hash('password123', 10);
 
       const [companies] = await queryInterface.sequelize.query(
-        `SELECT id FROM "companies" WHERE name = 'GreenTech Corp'`
+        `SELECT id FROM "companies" WHERE name = 'GreenTech corp'`
       );
 
       const companyId = companies[0]?.id;
@@ -21,9 +21,9 @@ module.exports = {
         await queryInterface.bulkInsert('users', [
           {
             email: 'csr.manager@greentech.com',
-            password_hash: passwordHash,
+            password: passwordHash,
             company_id: companyId,
-            role: 'csr-manager',
+            role: 'csr_manager',
             created_at: new Date(),
             updated_at: new Date(),
           },

@@ -15,15 +15,19 @@
     "migration:down": "npx sequelize-cli db:migrate:undo",
     "seed:create": "npx sequelize-cli seed:generate --name",
     "seed:all": "npx sequelize-cli db:seed:all",
-    "db-init": "babel-node src/utils/scripts/db-create.js && npm run migration:up && npm run seed:all",
+    "db:create": "babel-node src/utils/scripts/db-create.js",
+    "db-init": "npm run db:create && npm run migration:up && npm run seed:all && babel-node src/utils/scripts/db-seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.27.0",

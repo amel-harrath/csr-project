@@ -13,15 +13,7 @@ module.exports = {
         unique: true,
       },
       description: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      document_type_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'document_types',
-          key: 'id',
-        },
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       created_at: {
