@@ -6,7 +6,6 @@ export default class Requirement extends Model {
       {
         name: DataTypes.STRING,
         description: DataTypes.STRING,
-        documentTypeId: DataTypes.INTEGER,
       },
       {
         sequelize,
@@ -14,6 +13,9 @@ export default class Requirement extends Model {
         tableName: 'requirements',
         underscored: true,
         timestamps: true,
+        defaultScope: {
+          attributes: ['id', 'name', 'description'],
+        },
       }
     );
   }

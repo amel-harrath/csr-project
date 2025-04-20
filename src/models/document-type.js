@@ -14,6 +14,9 @@ export default class DocumentType extends Model {
         tableName: 'document_types',
         underscored: true,
         timestamps: true,
+        defaultScope: {
+          attributes: ['id', 'name', 'description'],
+        },
       }
     );
   }

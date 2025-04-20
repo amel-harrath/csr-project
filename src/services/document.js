@@ -4,7 +4,7 @@ import CustomError from 'src/utils/errors';
 
 export default class DocumentService {
   static async addDocument(documentTypeSlug, companyId, expiresAt, fileLink) {
-    const documentType = await DocumentType.findOne({
+    const documentType = await DocumentType.unscoped().findOne({
       where: { slug: documentTypeSlug },
     });
     if (!documentType) {
@@ -41,7 +41,6 @@ export default class DocumentService {
   }
   static async getAllDocuments(companyId) {
     const documentTypes = await DocumentType.findAll({
-      attributes: ['id', 'name', 'description'],
       include: [
         {
           model: Document,
