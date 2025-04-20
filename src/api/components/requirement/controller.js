@@ -18,8 +18,11 @@ export default class RequirementController {
   async getRequirementDetails(req, res) {
     try {
       const { id } = req.params;
+      const { user } = req;
+      const companyId = user.companyId;
       const requirementDetails = await RequirementService.getRequirementDetails(
-        id
+        id,
+        companyId
       );
       return res.status(200).json(requirementDetails);
     } catch (error) {
