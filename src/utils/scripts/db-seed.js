@@ -38,7 +38,7 @@ async function seedDatabase() {
           transaction,
         }
       );
-      const documentTypeId = type[0]?.id;
+      const documentTypeId = type[0] ? type[0].id : null;
       documentTypeMap.set(row.Document, documentTypeId);
     });
 
@@ -76,7 +76,7 @@ async function seedDatabase() {
           transaction,
         }
       );
-      const requirementId = requirement[0]?.id;
+      const requirementId = requirement[0] ? requirement[0].id : null;
 
       if (requirementId) {
         // Create associations in the requirement_document_type table
