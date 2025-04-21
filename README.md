@@ -195,7 +195,7 @@ This table stores information about the companies that are managing their CSR co
    ```bash
    npm run dev
    ```
-4. Visit the app at http://localhost:3001
+4. Visit the app at http://localhost:3010
 
 ---
 
