@@ -2,6 +2,8 @@
 
 A backend API to help companies track and manage their compliance with Corporate Social Responsibility (CSR) requirements.
 
+The API is available on https://csr-backend-o9b5.onrender.com
+
 ---
 
 ## 📘 Context
